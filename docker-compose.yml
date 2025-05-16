@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: 'jdbc:mysql://flutter.cmnco2is8n58.us-east-1.rds.amazonaws.com:3306/flutter'
+      SPRING_DATASOURCE_USERNAME: 'admin'
+      SPRING_DATASOURCE_PASSWORD: 'Nck250621'  
+
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
+
+      SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE: 20MB
+      SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE: 20MB
+
+      SPRING_MAIL_HOST: smtp.gmail.com
+      SPRING_MAIL_PORT: 587
+      SPRING_MAIL_USERNAME: "caoky.sonha@gmail.com"
+      SPRING_MAIL_PASSWORD: "iisrdsbtaljjucag"
+      SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH: "true"
+      SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE: "true"
+    ports:
+      - "8080:8080"
